@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
     content: ['./pages/**/*.{ts,tsx}', './components/**/*.{ts,tsx}'],
     theme: {
@@ -12,8 +15,14 @@ module.exports = {
             },
         },
         fontFamily: {
+            sans: ['Montserrat', ...defaultTheme.fontFamily.sans],
             body: ['Montserrat'],
         },
+        screens: {
+            sm: '375px',
+            md: '768px',
+            lg: '1440px',
+        },
     },
-    plugins: [],
+    plugins: [require('@tailwindcss/typography')],
 };

@@ -1,0 +1,52 @@
+[
+    {
+        "title": "Xenon arc",
+        "link": "https://xenonarc.com",
+        "body": "A complete rebrand and build including an interactive ROI calculation chart",
+        "tags": ["Next.js", "Strapi CMS", "D3.js", "TypeScript"],
+        "mainImage": "/assets/images/projects/xenonarc/xenonarc-main.png",
+        "images": [
+            "/assets/images/projects/xenonarc/xenonarc-blog.gif",
+            "/assets/images/projects/xenonarc/xenonarc-home.gif"
+        ]
+    },
+    {
+        "title": "Conntact™ 2.0 by Xenon arc",
+        "body": "An analytics dashboard for materials market intelligence with beautiful interactive visualisations and complex data processing",
+        "tags": ["Next.js", "SQL", "REST API", "D3.js", "TypeScript"],
+        "mainImage": "/assets/images/projects/conntact/conntact-2-leaderboard.png",
+        "images": [
+            "/assets/images/projects/conntact/conntact-2-discs.png",
+            "/assets/images/projects/conntact/conntact-2-sankey.png"
+        ]
+    },
+    {
+        "title": "Cloud 11 | Drew Martin",
+        "link": "https://findcloud11.com",
+        "body": "E-commerce with an automated delivery and compliance integration",
+        "tags": [
+            "Next.js",
+            "Wordpress",
+            "Node.js",
+            "TypeScript",
+            "Magento",
+            "GraphQL"
+        ],
+        "mainImage": "/assets/images/projects/c11-dm/cloud11-main.png",
+        "images": [
+            "/assets/images/projects/c11-dm/drew-martin.png",
+            "/assets/images/projects/c11-dm/cloud11-butterflies.gif"
+        ]
+    },
+    {
+        "title": "Elemez by B2M Solutions",
+        "link": "https://b2msolutions.com/businesscriticalmobility",
+        "body": "Real time analytics of business critical mobile devices",
+        "tags": ["React.js", "AWS", "Node.js", "TypeScript", "Java", "C# .NET"],
+        "mainImage": "/assets/images/projects/elemez/elemez-snapshot.png",
+        "images": [
+            "/assets/images/projects/elemez/elemez-battery-essentials.png",
+            "/assets/images/projects/elemez/elemez-disruption.png"
+        ]
+    }
+]
