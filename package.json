@@ -14,7 +14,9 @@
         "@mdx-js/loader": "^2.1.4",
         "@mdx-js/react": "^2.1.4",
         "@next/mdx": "^12.3.1",
+        "@types/nodemailer": "^6.4.6",
         "next": "12.3.1",
+        "nodemailer": "^6.8.0",
         "react": "18.2.0",
         "react-dom": "18.2.0"
     },
