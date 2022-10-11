@@ -28,6 +28,7 @@ export const Hero: React.FC = () => {
                         Welcome to my portfolio, my name&apos;s Charles Garth and I&apos;m
                         a full stack freelance contract software developer.
                     </span>
+                    <Statement />
                 </div>
             </div>
         </div>

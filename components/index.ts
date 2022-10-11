@@ -1,5 +1,6 @@
 import { Footer } from './footer';
 import { Header } from './header';
+import { Statement } from './statement';
 import { Hero } from './hero';
 import { About } from './about';
 import { Card } from './card';
@@ -11,6 +12,7 @@ export {
     Header,
     Card,
     Footer,
+    Statement,
     Hero,
     About,
     Projects,
