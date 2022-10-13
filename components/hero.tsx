@@ -31,6 +31,11 @@ export const Hero: React.FC = () => {
                     <Statement />
                 </div>
             </div>
+            <Button
+                text="🎉 Say hello!"
+                onClick={quoteClick}
+                className="px-10 py-6 lg:text-4xl font-cursive font-bold text-black from-yellow-300 to-orange-300 hover:from-yellow-200 hover:to-orange-200 hover:scale-105 transition-all"
+            />
         </div>
     );
 };
