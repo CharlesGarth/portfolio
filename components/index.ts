@@ -7,6 +7,7 @@ import { Card } from './card';
 import { Projects } from './projects';
 import { Contact } from './contact';
 import { Button } from './button';
+import { Meta } from './meta';
 
 export {
     Header,
@@ -18,4 +19,5 @@ export {
     Projects,
     Contact,
     Button,
+    Meta,
 };
