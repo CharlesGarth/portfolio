@@ -32,8 +32,8 @@ export const Header: React.FC<IHeaderProps> = ({
     ];
 
     return (
-        <div className="sm:px-4 md:px-12 lg:px-gutters my-2 flex flex-grow content-center items-center sm:gap-2 md:gap-6 sticky top-0 bg-white z-10">
-            <h1 className="grow sm:text-2xl md:text-4xl lg:text-6xl font-body font-thin tracking-widest">
+        <div className="sm:px-4 md:px-12 lg:px-gutters my-2 flex flex-col sm:flex-row flex-grow content-center items-center gap-2 md:gap-6 sticky top-0 bg-white z-10">
+            <h1 className="grow text-2xl md:text-4xl lg:text-6xl font-body font-thin tracking-widest">
                 <Link href="/">{header}</Link>
             </h1>
             {sections.map(({ text, href }, i) => (

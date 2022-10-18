@@ -45,7 +45,7 @@ export const Contact: React.FC = () => {
                 <p className="prose">
                     Interested in working with me? Get in touch!
                 </p>
-                <div className="p-1 w-1/2 rounded-lg bg-gradient-to-r to-red-500 from-blue-500">
+                <div className="p-1 w-full md:w-1/2 rounded-lg bg-gradient-to-r to-red-500 from-blue-500">
                     <input
                         className="p-3 w-full rounded placeholder:text-gray-400"
                         type="email"
@@ -54,7 +54,7 @@ export const Contact: React.FC = () => {
                         onChange={(e) => setEmail(e.target.value)}
                     ></input>
                 </div>
-                <div className="p-1 w-1/2 rounded-lg bg-gradient-to-r to-red-500 from-blue-500">
+                <div className="p-1 w-full md:w-1/2 rounded-lg bg-gradient-to-r to-red-500 from-blue-500">
                     <textarea
                         className={`p-3 w-full rounded ${
                             message ? 'text-black' : 'text-gray-400'

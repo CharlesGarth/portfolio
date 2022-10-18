@@ -37,22 +37,26 @@ export const Projects: React.FC = () => {
                     <h2 className="text-center">
                         Other Projects I&apos;ve Contributed To
                     </h2>
-                    <ul className="columns-2">
+                    <ul className="md:columns-2">
                         {moreProjects.map((proj: IListProject, i) => (
                             <li key={`moreProjects_${i}_${proj.title}`}>
-                                <strong>{proj.title}</strong> -{' '}
-                                {proj.link ? (
-                                    <a
-                                        href={proj.link}
-                                        target="_blank"
-                                        rel="noreferrer"
-                                        className="text-blue-500 hover:text-blue-400"
-                                    >
-                                        {proj.link}
-                                    </a>
-                                ) : (
-                                    proj.text
-                                )}
+                                <div>
+                                    <strong>{proj.title}</strong>
+                                    <p className="overflow-clip text-ellipsis md:overflow-auto md:whitespace-normal">
+                                        {proj.link ? (
+                                            <a
+                                                href={proj.link}
+                                                target="_blank"
+                                                rel="noreferrer"
+                                                className="text-blue-500 hover:text-blue-400"
+                                            >
+                                                {proj.link}
+                                            </a>
+                                        ) : (
+                                            proj.text
+                                        )}
+                                    </p>
+                                </div>
                             </li>
                         ))}
                     </ul>

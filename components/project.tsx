@@ -32,7 +32,7 @@ export const ProjectCard: React.FC<IProject> = ({
     images,
 }) => (
     <div className="sm:py-1 md:py-2 lg:py-10 mx-auto w-full">
-        <h3 className="my-2 sm:text-xl md:text-2xl lg:text-3xl font-body font-light tracking-widest text-center">
+        <h3 className="my-2 text-lg sm:text-xl md:text-2xl lg:text-3xl font-body font-light tracking-widest text-center overflow-clip text-clip">
             {title}
             {link && ' - '}
             {link && (
@@ -46,15 +46,15 @@ export const ProjectCard: React.FC<IProject> = ({
                 </a>
             )}
         </h3>
-        <p className="my-2 sm:text-base md:text-xl lg:text-2xl font-body font-light text-center">
+        <p className="my-2 text-base md:text-xl lg:text-2xl font-body font-light text-center">
             {body}
         </p>
-        <div className="my-5 flex justify-center">
+        <div className="my-5 flex flex-wrap md:flex-nowrap justify-center gap-1">
             {tags.map((tag, i) => (
                 <span
                     key={`project_${i}_${tag}`}
                     style={{ backgroundColor: colors[i] }}
-                    className={`sm:mx-1 lg:mx-5 sm:px-1 md:px-5 sm:text-sm md:text-sm lg:text-2xl font-body rounded text-center`}
+                    className={`mx-1 lg:mx-5 px-1 md:px-5 text-sm md:text-sm lg:text-2xl font-body rounded text-center`}
                 >
                     {tag}
                 </span>
