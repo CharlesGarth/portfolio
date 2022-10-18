@@ -36,7 +36,12 @@ export const ProjectCard: React.FC<IProject> = ({
             {title}
             {link && ' - '}
             {link && (
-                <a href={link} className="text-blue-500 hover:text-blue-400">
+                <a
+                    href={link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-blue-500 hover:text-blue-400"
+                >
                     {link.split('https://')[1]}
                 </a>
             )}

@@ -8,14 +8,13 @@ import {
     Projects,
     Meta,
 } from '../components';
-import projects from '../content/projects.json';
 
 const Home: NextPage = () => (
     <>
         <Meta />
         <Header header="Charles Garth" currentSection={0} />
         <Hero />
-        <Projects projects={projects} />
+        <Projects />
         <About />
         <Contact />
         <Footer />

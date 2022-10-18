@@ -25,8 +25,9 @@ export const Hero: React.FC = () => {
                         <span className="sm:text-lg md:text-xl lg:text-2xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-blue-500">
                             Hello there!
                         </span>{' '}
-                        Welcome to my portfolio, my name&apos;s Charles Garth and I&apos;m
-                        a full stack freelance contract software developer.
+                        Welcome to my portfolio, my name&apos;s Charles Garth
+                        and I&apos;m a full stack freelance contract software
+                        developer.
                     </span>
                     <Statement />
                 </div>
