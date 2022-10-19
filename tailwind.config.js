@@ -9,10 +9,18 @@ module.exports = {
             colors: {
                 coral: '#FF6363',
                 cyan: '#97FFDA',
+                darkness: '#121217',
             },
             spacing: {
                 gutters: '87px',
             },
+            typography: () => ({
+                dark: {
+                    css: {
+                        color: 'white',
+                    },
+                },
+            }),
         },
         fontFamily: {
             sans: ['Montserrat', ...defaultTheme.fontFamily.sans],
@@ -26,4 +34,5 @@ module.exports = {
         },
     },
     plugins: [require('@tailwindcss/typography')],
+    darkMode: 'class',
 };

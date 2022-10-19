@@ -56,9 +56,9 @@ export const Statement: React.FC = () => {
 
     return (
         <div className="container my-8 mx-auto flex align-middle">
-            <span className="font-body sm:text-base md:text-1xl lg:text-3xl">
+            <span className="font-body text-sm sm:text-base md:text-1xl lg:text-3xl">
                 I build{' '}
-                <span className="sm:text-lg md:text-2xl lg:text-4xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-blue-500">
+                <span className="text-base sm:text-lg md:text-2xl lg:text-4xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-blue-500">
                     {modifiers[modifier]} {products[product]}
                 </span>
                 .

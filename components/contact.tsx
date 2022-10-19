@@ -42,12 +42,12 @@ export const Contact: React.FC = () => {
                 className="flex flex-col justify-center items-center gap-2"
                 onSubmit={submit}
             >
-                <p className="prose">
+                <p className="prose dark:text-white">
                     Interested in working with me? Get in touch!
                 </p>
                 <div className="p-1 w-full md:w-1/2 rounded-lg bg-gradient-to-r to-red-500 from-blue-500">
                     <input
-                        className="p-3 w-full rounded placeholder:text-gray-400"
+                        className="p-3 w-full rounded placeholder:text-gray-400 dark:bg-darkness"
                         type="email"
                         required={true}
                         placeholder="Enter your email"
@@ -56,8 +56,10 @@ export const Contact: React.FC = () => {
                 </div>
                 <div className="p-1 w-full md:w-1/2 rounded-lg bg-gradient-to-r to-red-500 from-blue-500">
                     <textarea
-                        className={`p-3 w-full rounded ${
-                            message ? 'text-black' : 'text-gray-400'
+                        className={`p-3 w-full rounded dark:bg-darkness ${
+                            message
+                                ? 'text-black dark:text-white'
+                                : 'text-gray-400'
                         }`}
                         form="contact"
                         defaultValue="Say hello!"

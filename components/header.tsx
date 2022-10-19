@@ -14,7 +14,7 @@ export const Header: React.FC<IHeaderProps> = ({
     const selectedStyles =
         'text-white bg-gradient-to-r from-red-500 to-blue-500 hover:from-red-400 hover:to-blue-400 rounded';
     const unselectedStyles =
-        'hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-red-400 hover:to-blue-400';
+        'hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-red-400 hover:to-blue-400 dark:text-white dark:hover:text-transparent dark:hover:from-red-400 dark:hover:to-blue-400';
 
     const sections = [
         {
@@ -32,8 +32,8 @@ export const Header: React.FC<IHeaderProps> = ({
     ];
 
     return (
-        <div className="sm:px-4 md:px-12 lg:px-gutters my-2 flex flex-col sm:flex-row flex-grow content-center items-center gap-2 md:gap-6 sticky top-0 bg-white z-10">
-            <h1 className="grow text-2xl md:text-4xl lg:text-6xl font-body font-thin tracking-widest">
+        <div className="sm:px-4 md:px-12 lg:px-gutters py-2 flex flex-col sm:flex-row flex-grow content-center items-center gap-2 md:gap-6 sticky top-0 bg-white dark:bg-darkness z-10">
+            <h1 className="grow text-2xl md:text-4xl lg:text-6xl font-body font-thin tracking-widest dark:text-white">
                 <Link href="/">{header}</Link>
             </h1>
             {sections.map(({ text, href }, i) => (

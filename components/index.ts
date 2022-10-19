@@ -8,6 +8,7 @@ import { Projects } from './projects';
 import { Contact } from './contact';
 import { Button } from './button';
 import { Meta } from './meta';
+import { Toggle } from './toggle';
 
 export {
     Header,
@@ -20,4 +21,5 @@ export {
     Contact,
     Button,
     Meta,
+    Toggle,
 };

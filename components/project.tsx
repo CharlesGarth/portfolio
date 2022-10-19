@@ -54,13 +54,13 @@ export const ProjectCard: React.FC<IProject> = ({
                 <span
                     key={`project_${i}_${tag}`}
                     style={{ backgroundColor: colors[i] }}
-                    className={`mx-1 lg:mx-5 px-1 md:px-5 text-sm md:text-sm lg:text-2xl font-body rounded text-center`}
+                    className={`mx-1 lg:mx-5 px-1 md:px-5 text-sm md:text-sm lg:text-2xl font-body rounded text-center dark:text-black`}
                 >
                     {tag}
                 </span>
             ))}
         </div>
-        <div className="my-10 grid overflow-hidden grid-cols-3 grid-rows-2 sm:gap-10 lg:gap-20">
+        <div className="my-10 grid overflow-hidden grid-cols-3 grid-rows-2 gap-1 sm:gap-10 lg:gap-20">
             <a
                 href={link}
                 target="_blank"

@@ -30,7 +30,7 @@ export const Footer: React.FC = () => {
 
     return (
         <footer>
-            <div className="container my-5 md:my-20 mx-auto px-4 md:px-12 lg:px-gutters">
+            <div className="container my-5 md:my-20 mx-auto pb-10 md:pb-0 px-4 md:px-12 lg:px-gutters">
                 <div className="flex flex-auto flex-col md:flex-row justify-center gap-6">
                     {items.map((item, i) => (
                         <a

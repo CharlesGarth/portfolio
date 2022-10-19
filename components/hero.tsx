@@ -20,9 +20,9 @@ export const Hero: React.FC = () => {
                         className="rounded-full"
                     />
                 </div>
-                <div className="text-base md:text-lg lg:text-xl font-body sm:px-5 md:px-20 sm:h-56 md:h-48 lg:h-40">
+                <div className="text-sm sm:text-base md:text-lg lg:text-xl font-body sm:px-5 md:px-20 h-44 sm:h-56 md:h-48 lg:h-40">
                     <span className="inline-block lg:w-3/4">
-                        <span className="sm:text-lg md:text-xl lg:text-2xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-blue-500">
+                        <span className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-blue-500">
                             Hello there!
                         </span>{' '}
                         Welcome to my portfolio, my name&apos;s Charles Garth

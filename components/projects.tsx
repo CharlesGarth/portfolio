@@ -33,7 +33,7 @@ export const Projects: React.FC = () => {
                 className="px-4 py-2 rounded-lg"
             />
             {showMore && (
-                <div className="prose mx-auto pt-2">
+                <div className="prose mx-auto pt-2 dark:prose-p:text-white dark:prose-headings:text-white dark:prose-strong:text-white">
                     <h2 className="text-center">
                         Other Projects I&apos;ve Contributed To
                     </h2>
