@@ -31,12 +31,21 @@ export const Meta: React.FC<IMetaProps> = ({
         <meta property="og:title" content={title} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${process.env.BASE_URL}`} />
+        <meta property="og:description" content={description} />
         <meta
             property="og:image"
-            content={`${process.env.BASE_URL}/assets/images/me.png`}
+            content={`${process.env.BASE_URL}/assets/images/cover.png`}
         />
         {/* Twitter */}
         <meta name="twitter:card" content="summary" key="twcard" />
         <meta name="twitter:creator" content="@charlesgarth" key="twhandle" />
+        <meta property="twitter:domain" content="charlesgarth.co.uk" />
+        <meta property="twitter:url" content={`${process.env.BASE_URL}`} />
+        <meta property="twitter:title" content={title} />
+        <meta property="twitter:description" content={description} />
+        <meta
+            property="twitter:image"
+            content={`${process.env.BASE_URL}/assets/images/cover.png`}
+        />
     </Head>
 );
