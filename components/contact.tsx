@@ -1,8 +1,9 @@
 import { FormEvent, useState } from 'react';
 import { Card } from './card';
 import Image from 'next/image';
+import { Section } from './section';
 
-export const Contact: React.FC = () => {
+export const Contact: Section = ({ setSection }) => {
     const [email, setEmail] = useState<string>();
     const [message, setMessage] = useState<string>();
     const [showToast, setShowToast] = useState<boolean>();
@@ -36,7 +37,12 @@ export const Contact: React.FC = () => {
     };
 
     return (
-        <Card id="contact" title="Contact" centered>
+        <Card
+            id="contact"
+            title="Contact"
+            onEnter={() => setSection('contact')}
+            centered
+        >
             <form
                 id="contact"
                 className="flex flex-col justify-center items-center gap-2"

@@ -2,12 +2,12 @@ import Link from 'next/link';
 
 interface IHeaderProps {
     header: string;
-    currentSection: number;
+    currentSection: string;
 }
 
 export const Header: React.FC<IHeaderProps> = ({
     header,
-    currentSection = 0,
+    currentSection = 'projects',
 }) => {
     const linkStyles =
         'px-2 sm:text-sm md:text-xl lg:text-2xl cursor-pointer font-body';
@@ -18,14 +18,17 @@ export const Header: React.FC<IHeaderProps> = ({
 
     const sections = [
         {
+            id: 'projects',
             text: 'Projects',
             href: '#projects',
         },
         {
+            id: 'about',
             text: 'About',
             href: '#about',
         },
         {
+            id: 'contact',
             text: 'Contact',
             href: '#contact',
         },
@@ -36,11 +39,11 @@ export const Header: React.FC<IHeaderProps> = ({
             <h1 className="grow text-2xl md:text-4xl lg:text-6xl font-body font-thin tracking-widest dark:text-white">
                 <Link href="/">{header}</Link>
             </h1>
-            {sections.map(({ text, href }, i) => (
+            {sections.map(({ id, text, href }, i) => (
                 <span
                     key={`header_${i}_${href}`}
                     className={`${linkStyles} ${
-                        currentSection == i ? selectedStyles : unselectedStyles
+                        currentSection == id ? selectedStyles : unselectedStyles
                     }`}
                 >
                     <Link href={href} scroll={false}>

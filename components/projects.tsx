@@ -4,6 +4,7 @@ import { Card } from './card';
 import { IProject, ProjectCard } from './project';
 import projects from '../content/projects.json';
 import moreProjects from '../content/moreProjects.json';
+import { Section } from './section';
 
 interface IListProject {
     title: string;
@@ -11,14 +12,15 @@ interface IListProject {
     text?: string;
 }
 
-export const Projects: React.FC = () => {
+export const Projects: Section = ({ setSection }) => {
+    const ID = 'projects';
     const [showMore, setShowMore] = useState<boolean>();
 
     return (
-        <Card id="projects" title="Project Spotlight">
+        <Card id={ID} title="Project Spotlight" onEnter={() => setSection(ID)}>
             {projects.map((proj: IProject, i) => (
                 <ProjectCard
-                    key={`projects_${i}_${proj.title}`}
+                    key={`${ID}_${i}_${proj.title}`}
                     title={proj.title}
                     link={proj.link}
                     body={proj.body}
