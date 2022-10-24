@@ -10,11 +10,11 @@ export const Header: React.FC<IHeaderProps> = ({
     currentSection = 'projects',
 }) => {
     const linkStyles =
-        'px-2 sm:text-sm md:text-xl lg:text-2xl cursor-pointer font-body';
+        'sm:text-sm md:text-xl lg:text-2xl cursor-pointer font-body';
     const selectedStyles =
         'px-10 py-5 font-medium tracking-wide text-white bg-gradient-to-tl from-red-500 to-blue-500 hover:from-red-400 hover:to-blue-400 rounded-full';
     const unselectedStyles =
-        'hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-red-400 hover:to-blue-400 dark:text-white dark:hover:text-transparent dark:hover:from-red-400 dark:hover:to-blue-400';
+        'px-2 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-red-400 hover:to-blue-400 dark:text-white dark:hover:text-transparent dark:hover:from-red-400 dark:hover:to-blue-400';
 
     const sections = [
         {
