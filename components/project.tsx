@@ -54,7 +54,7 @@ export const ProjectCard: React.FC<IProject> = ({
                 <span
                     key={`project_${i}_${tag}`}
                     style={{ backgroundColor: colors[i] }}
-                    className={`mx-1 lg:mx-5 px-1 md:px-5 text-sm md:text-sm lg:text-2xl font-body rounded text-center dark:text-black`}
+                    className={`mx-1 lg:mx-5 px-1 md:px-5 text-sm md:text-sm lg:text-2xl font-body rounded-lg text-center dark:text-black`}
                 >
                     {tag}
                 </span>

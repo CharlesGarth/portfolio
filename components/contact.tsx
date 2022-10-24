@@ -51,7 +51,7 @@ export const Contact: Section = ({ setSection }) => {
                 <p className="prose dark:text-white">
                     Interested in working with me? Get in touch!
                 </p>
-                <div className="p-1 w-full md:w-1/2 rounded-lg bg-gradient-to-r to-red-500 from-blue-500">
+                <div className="p-1 w-full md:w-1/2 rounded-lg bg-gradient-to-l from-red-500 to-blue-500">
                     <input
                         className="p-3 w-full rounded placeholder:text-gray-400 dark:bg-darkness"
                         type="email"
@@ -60,7 +60,7 @@ export const Contact: Section = ({ setSection }) => {
                         onChange={(e) => setEmail(e.target.value)}
                     ></input>
                 </div>
-                <div className="p-1 w-full md:w-1/2 rounded-lg bg-gradient-to-r to-red-500 from-blue-500">
+                <div className="p-1 w-full md:w-1/2 rounded-lg bg-gradient-to-l from-red-500 to-blue-500">
                     <textarea
                         className={`p-3 w-full rounded dark:bg-darkness ${
                             message
@@ -75,7 +75,7 @@ export const Contact: Section = ({ setSection }) => {
                     ></textarea>
                 </div>
                 <input
-                    className="px-4 py-2 sm:text-sm md:text-xl lg:text-2xl cursor-pointer font-body text-white bg-gradient-to-r from-red-500 to-blue-500 hover:from-red-400 hover:to-blue-400 disabled:from-red-400 disabled:to-blue-400 rounded-lg"
+                    className="px-10 py-5 sm:text-sm md:text-xl lg:text-2xl cursor-pointer font-body font-medium tracking-wide text-white bg-gradient-to-tl from-red-500 to-blue-500 hover:from-red-400 hover:to-blue-400 disabled:from-red-400 disabled:to-blue-400 rounded-full"
                     type="submit"
                     disabled={submitting}
                     value={submitting ? 'Sending' : 'Send'}

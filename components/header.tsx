@@ -12,7 +12,7 @@ export const Header: React.FC<IHeaderProps> = ({
     const linkStyles =
         'px-2 sm:text-sm md:text-xl lg:text-2xl cursor-pointer font-body';
     const selectedStyles =
-        'text-white bg-gradient-to-r from-red-500 to-blue-500 hover:from-red-400 hover:to-blue-400 rounded';
+        'px-10 py-5 font-medium tracking-wide text-white bg-gradient-to-tl from-red-500 to-blue-500 hover:from-red-400 hover:to-blue-400 rounded-full';
     const unselectedStyles =
         'hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-red-400 hover:to-blue-400 dark:text-white dark:hover:text-transparent dark:hover:from-red-400 dark:hover:to-blue-400';
 
@@ -35,9 +35,9 @@ export const Header: React.FC<IHeaderProps> = ({
     ];
 
     return (
-        <div className="sm:px-4 md:px-12 lg:px-gutters py-2 flex flex-col sm:flex-row flex-grow content-center items-center gap-2 md:gap-6 sticky top-0 bg-white dark:bg-darkness z-10">
-            <h1 className="grow text-2xl md:text-4xl lg:text-6xl font-body font-thin tracking-widest dark:text-white">
-                <Link href="/">{header}</Link>
+        <div className="sm:px-4 md:px-12 lg:px-gutters py-4 md:py-10 flex flex-col sm:flex-row flex-grow content-center items-center gap-2 md:gap-6 sticky top-0 bg-white dark:bg-darkness z-10">
+            <h1 className="grow text-2xl md:text-4xl lg:text-6xl font-body font-bold tracking-widest">
+                <Link href="/">{header}</Link>.
             </h1>
             {sections.map(({ id, text, href }, i) => (
                 <span

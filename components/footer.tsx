@@ -7,7 +7,7 @@ export const Footer: React.FC = () => {
     const sharedStyle =
         'cursor-pointer sm:text-lg md:text-xl lg:text-2xl font-body';
     const gradientStyle =
-        'text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-blue-500 hover:from-red-400 hover:to-blue-400';
+        'text-transparent bg-clip-text bg-gradient-to-tl from-red-500 to-blue-500 hover:from-red-400 hover:to-blue-400';
     const linkStyle = 'text-blue-500 hover:text-blue-400';
 
     const items = [

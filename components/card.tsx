@@ -18,7 +18,8 @@ export const Card: React.FC<ICardProps> = ({
     const ref = useRef<HTMLDivElement>(null);
     useEffect(() => {
         const observer = new IntersectionObserver(
-            ([entry]) => entry.isIntersecting && onEnter && onEnter()
+            ([entry]) => entry.isIntersecting && onEnter && onEnter(),
+            { rootMargin: '0px 0px -400px 0px' }
         );
         observer.observe(ref.current as Element);
         return () => {
@@ -32,7 +33,7 @@ export const Card: React.FC<ICardProps> = ({
                 id={id}
                 className={`${
                     centered && 'mx-auto'
-                } text-xl md:text-2xl lg:text-5xl w-fit h-14 font-body font-light tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-blue-500 overflow-visible scroll-mt-36 sm:scroll-mt-28 md:scroll-mt-32`}
+                } text-xl md:text-2xl lg:text-5xl w-fit h-14 font-body font-bold tracking-wide underline underline-offset-[20px] overflow-visible scroll-mt-44 sm:scroll-mt-36 md:scroll-mt-40`}
             >
                 {title}
             </h2>
