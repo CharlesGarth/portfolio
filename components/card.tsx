@@ -17,9 +17,13 @@ export const Card: React.FC<ICardProps> = ({
 }) => {
     const ref = useRef<HTMLDivElement>(null);
     useEffect(() => {
+        const vh = Math.max(
+            document.documentElement.clientHeight || 0,
+            window.innerHeight || 0
+        );
         const observer = new IntersectionObserver(
             ([entry]) => entry.isIntersecting && onEnter && onEnter(),
-            { rootMargin: '0px 0px -400px 0px' }
+            { rootMargin: `0px 0px -${vh / 2}px 0px` }
         );
         observer.observe(ref.current as Element);
         return () => {
