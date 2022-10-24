@@ -33,10 +33,11 @@ export const Toggle: React.FC = () => {
     return (
         <>
             <div
+                title="Dark Mode Toggle"
                 onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
                 className="fixed bottom-4 bg-darkness dark:bg-white z-20 w-10 h-10 rounded-r-full cursor-pointer text-center"
             >
-                <span className="select-none flex justify-center">
+                <span className="select-none flex justify-center p-[1px]">
                     {theme === 'dark' ? Sun : Moon}
                 </span>
             </div>
