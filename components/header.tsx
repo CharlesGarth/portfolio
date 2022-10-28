@@ -10,11 +10,11 @@ export const Header: React.FC<IHeaderProps> = ({
     currentSection = 'projects',
 }) => {
     const linkStyles =
-        'sm:text-sm md:text-xl lg:text-2xl cursor-pointer font-body';
+        'sm:text-sm md:text-xl lg:text-2xl cursor-pointer font-body transition-all';
     const selectedStyles =
-        'px-4 md:px-10 py-2 md:py-5 font-medium tracking-wide text-white bg-gradient-to-tl from-red-500 to-blue-500 hover:from-red-400 hover:to-blue-400 rounded-full';
+        'px-4 md:px-10 py-2 md:py-5 font-medium tracking-wide text-white bg-gradient-to-tl from-red-500 to-blue-500 hover:from-red-600 hover:to-blue-600 hover:scale-[102%] transition-all rounded-full';
     const unselectedStyles =
-        'px-2 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-red-400 hover:to-blue-400 dark:text-white dark:hover:text-transparent dark:hover:from-red-400 dark:hover:to-blue-400';
+        'px-2 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-tl hover:from-red-500 hover:to-blue-500 dark:text-white dark:hover:text-transparent dark:hover:from-red-500 dark:hover:to-blue-500';
 
     const sections = [
         {
@@ -40,16 +40,20 @@ export const Header: React.FC<IHeaderProps> = ({
                 <Link href="/">{header}</Link>.
             </h1>
             {sections.map(({ id, text, href }, i) => (
-                <span
-                    key={`header_${i}_${href}`}
-                    className={`${linkStyles} ${
-                        currentSection == id ? selectedStyles : unselectedStyles
-                    }`}
-                >
-                    <Link href={href} scroll={false}>
-                        {text}
-                    </Link>
-                </span>
+                <div className="min-h-[68px]">
+                    <span
+                        key={`header_${i}_${href}`}
+                        className={`${linkStyles} ${
+                            currentSection == id
+                                ? selectedStyles
+                                : unselectedStyles
+                        }`}
+                    >
+                        <Link href={href} scroll={false}>
+                            {text}
+                        </Link>
+                    </span>
+                </div>
             ))}
         </div>
     );

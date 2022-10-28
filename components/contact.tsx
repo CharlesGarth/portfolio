@@ -75,7 +75,7 @@ export const Contact: Section = ({ setSection }) => {
                     ></textarea>
                 </div>
                 <input
-                    className="px-10 py-5 sm:text-sm md:text-xl lg:text-2xl cursor-pointer font-body font-medium tracking-wide text-white bg-gradient-to-tl from-red-500 to-blue-500 hover:from-red-400 hover:to-blue-400 disabled:from-red-400 disabled:to-blue-400 rounded-full"
+                    className="px-10 py-5 sm:text-sm md:text-xl lg:text-2xl cursor-pointer font-body font-medium tracking-wide text-white bg-gradient-to-tl from-red-500 to-blue-500 hover:from-red-600 hover:to-blue-600 disabled:from-red-400 disabled:to-blue-400 hover:scale-[102%] transition-all rounded-full"
                     type="submit"
                     disabled={submitting}
                     value={submitting ? 'Sending' : 'Send'}

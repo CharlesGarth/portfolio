@@ -26,8 +26,7 @@ export const Hero: React.FC = () => {
                             Hello there!
                         </span>{' '}
                         Welcome to my portfolio, my name&apos;s Charles Garth
-                        and I&apos;m a full stack freelance contract software
-                        developer.
+                        and I&apos;m a full stack freelance software developer.
                     </span>
                     <Statement />
                 </div>
@@ -35,7 +34,7 @@ export const Hero: React.FC = () => {
             <Button
                 text="🎉 Say hello!"
                 onClick={quoteClick}
-                className="px-2 md:px-5 lg:px-10 py-3 md:py-3 lg:py-6 lg:text-4xl font-cursive font-bold text-black from-yellow-300 to-orange-300 hover:from-yellow-200 hover:to-orange-200 hover:scale-105 transition-all"
+                className="px-2 md:px-5 lg:px-10 py-3 md:py-3 lg:py-6 lg:text-4xl font-cursive font-bold text-black from-yellow-300 to-orange-300 hover:from-yellow-400 hover:to-orange-400 hover:scale-[105%] transition-all"
             />
         </div>
     );
