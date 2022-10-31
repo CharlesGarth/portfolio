@@ -1,17 +1,21 @@
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
+import { useState, MouseEvent } from 'react';
+import { LightBox } from './lightbox';
 
 export interface IProject {
     title: string;
     link?: string;
     body: string;
     tags: string[];
-    mainImage:
-        | string
-        | {
-              default: StaticImageData;
-          }
-        | StaticImageData;
+    mainImage: string;
     images: string[];
+}
+
+interface IProjectImage {
+    title: string;
+    image: string;
+    onClick: (e: MouseEvent) => void;
+    main?: boolean;
 }
 
 const colors = [
@@ -23,6 +27,34 @@ const colors = [
     '#A5B4FC',
 ];
 
+const ProjectImage: React.FC<IProjectImage> = ({
+    title,
+    image,
+    onClick,
+    main,
+}) => {
+    const sharedStyle = 'col-span-2 w-full relative hover:opacity-95';
+    const mainImageStyle = 'row-span-2 h-auto';
+    const smallImageStyle = 'col-start-3 h-48';
+
+    return (
+        <button
+            onClick={onClick}
+            className={`${sharedStyle} ${
+                main ? mainImageStyle : smallImageStyle
+            }`}
+        >
+            <Image
+                src={image}
+                alt={title}
+                layout="fill"
+                objectFit="cover"
+                className="rounded-lg"
+            />
+        </button>
+    );
+};
+
 export const ProjectCard: React.FC<IProject> = ({
     title,
     link,
@@ -30,79 +62,81 @@ export const ProjectCard: React.FC<IProject> = ({
     tags,
     mainImage,
     images,
-}) => (
-    <div className="sm:py-1 md:py-2 lg:py-10 mx-auto w-full">
-        <h3 className="my-2 text-lg sm:text-xl md:text-2xl lg:text-3xl font-body font-light tracking-widest text-center overflow-clip text-clip">
-            {title}
-            {link && ' - '}
-            {link && (
-                <a
-                    href={link}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-blue-500 hover:text-blue-600"
+}) => {
+    const [selectedImage, setSelectedImage] = useState<string>();
+
+    return (
+        <div className="sm:py-1 md:py-2 lg:py-10 mx-auto w-full">
+            <h3 className="my-2 text-lg sm:text-xl md:text-2xl lg:text-3xl font-body font-light tracking-widest text-center overflow-clip text-clip">
+                {title}
+                {link && ' - '}
+                {link && (
+                    <a
+                        href={link}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-blue-500 hover:text-blue-600"
+                    >
+                        {link.split('https://')[1]}
+                    </a>
+                )}
+            </h3>
+            <p className="my-2 text-base md:text-xl lg:text-2xl font-body font-light text-center">
+                {body}
+            </p>
+            <div className="my-5 flex flex-wrap md:flex-nowrap justify-center gap-1">
+                {tags.map((tag, i) => (
+                    <span
+                        key={`project_${i}_${tag}`}
+                        style={{ backgroundColor: colors[i] }}
+                        className={`mx-1 lg:mx-5 px-1 md:px-5 text-sm md:text-sm lg:text-2xl font-body rounded-lg text-center dark:text-black`}
+                    >
+                        {tag}
+                    </span>
+                ))}
+            </div>
+            <div className="my-10 grid overflow-hidden grid-cols-3 grid-rows-2 gap-1 sm:gap-10 lg:gap-20">
+                <ProjectImage
+                    title={title}
+                    image={mainImage}
+                    onClick={(e: MouseEvent) => {
+                        e.preventDefault();
+                        setSelectedImage(mainImage);
+                    }}
+                    main
+                />
+                <ProjectImage
+                    title={title}
+                    image={images[0] || mainImage}
+                    onClick={(e: MouseEvent) => {
+                        e.preventDefault();
+                        setSelectedImage(images[0] || mainImage);
+                    }}
+                />
+                <ProjectImage
+                    title={title}
+                    image={images[1] || mainImage}
+                    onClick={(e: MouseEvent) => {
+                        e.preventDefault();
+                        setSelectedImage(images[1] || mainImage);
+                    }}
+                />
+            </div>
+            {selectedImage && (
+                <LightBox
+                    closeBox={() => {
+                        setSelectedImage(undefined);
+                    }}
                 >
-                    {link.split('https://')[1]}
-                </a>
+                    <Image
+                        src={selectedImage}
+                        alt={title}
+                        layout="fill"
+                        objectFit="contain"
+                        className="rounded-lg"
+                    />
+                </LightBox>
             )}
-        </h3>
-        <p className="my-2 text-base md:text-xl lg:text-2xl font-body font-light text-center">
-            {body}
-        </p>
-        <div className="my-5 flex flex-wrap md:flex-nowrap justify-center gap-1">
-            {tags.map((tag, i) => (
-                <span
-                    key={`project_${i}_${tag}`}
-                    style={{ backgroundColor: colors[i] }}
-                    className={`mx-1 lg:mx-5 px-1 md:px-5 text-sm md:text-sm lg:text-2xl font-body rounded-lg text-center dark:text-black`}
-                >
-                    {tag}
-                </span>
-            ))}
         </div>
-        <div className="my-10 grid overflow-hidden grid-cols-3 grid-rows-2 gap-1 sm:gap-10 lg:gap-20">
-            <a
-                href={link}
-                target="_blank"
-                rel="noreferrer"
-                className="row-span-2 col-span-2 w-full h-auto relative hover:opacity-95"
-            >
-                <Image
-                    src={mainImage}
-                    alt={title}
-                    layout="fill"
-                    objectFit="cover"
-                    className="rounded-lg"
-                />
-            </a>
-            <a
-                href={link}
-                target="_blank"
-                rel="noreferrer"
-                className="col-start-3 col-span-2 w-full h-48 relative hover:opacity-95"
-            >
-                <Image
-                    src={images[0] || mainImage}
-                    alt={title}
-                    layout="fill"
-                    objectFit="cover"
-                    className="rounded-lg"
-                />
-            </a>
-            <a
-                href={link}
-                target="_blank"
-                rel="noreferrer"
-                className="col-start-3 col-span-2 w-full h-48 relative hover:opacity-95"
-            >
-                <Image
-                    src={images[1] || mainImage}
-                    alt={title}
-                    layout="fill"
-                    objectFit="cover"
-                    className="rounded-lg"
-                />
-            </a>
-        </div>
-    </div>
-);
+    );
+};
