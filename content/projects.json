@@ -8,7 +8,8 @@
         "images": [
             "/assets/images/projects/xenonarc/xenonarc-blog.gif",
             "/assets/images/projects/xenonarc/xenonarc-home.gif"
-        ]
+        ],
+        "markdown": "xenonarc"
     },
     {
         "title": "Conntact™ 2.0 by Xenon arc",
@@ -18,7 +19,8 @@
         "images": [
             "/assets/images/projects/conntact/conntact-2-discs.png",
             "/assets/images/projects/conntact/conntact-2-sankey.png"
-        ]
+        ],
+        "markdown": "conntact"
     },
     {
         "title": "Cloud 11 | Drew Martin",
@@ -36,7 +38,8 @@
         "images": [
             "/assets/images/projects/c11-dm/drew-martin.png",
             "/assets/images/projects/c11-dm/cloud11-butterflies.gif"
-        ]
+        ],
+        "markdown": "cloud11"
     },
     {
         "title": "Elemez by B2M Solutions",
@@ -47,6 +50,7 @@
         "images": [
             "/assets/images/projects/elemez/elemez-battery-essentials.png",
             "/assets/images/projects/elemez/elemez-disruption.png"
-        ]
+        ],
+        "markdown": "elemez"
     }
 ]

@@ -1,20 +1,19 @@
-import { useState } from 'react';
-import { Button } from './button';
 import { Card } from './card';
 import { IProject, ProjectCard } from './project';
 import projects from '../content/projects.json';
 import moreProjects from '../content/moreProjects.json';
 import { Section } from './section';
+import Image from 'next/image';
 
 interface IListProject {
     title: string;
     link?: string;
     text?: string;
+    logo?: string;
 }
 
 export const Projects: Section = ({ setSection }) => {
     const ID = 'projects';
-    const [showMore, setShowMore] = useState<boolean>();
 
     return (
         <Card id={ID} title="Project Spotlight" onEnter={() => setSection(ID)}>
@@ -27,43 +26,49 @@ export const Projects: Section = ({ setSection }) => {
                     tags={proj.tags}
                     mainImage={proj.mainImage}
                     images={proj.images}
+                    markdown={proj.markdown}
                 />
             ))}
-            <Button
-                text={showMore ? 'Show Less' : 'Show More'}
-                onClick={() => setShowMore(!showMore)}
-                className="px-4 py-2 rounded-lg"
-            />
-            {showMore && (
-                <div className="prose mx-auto pt-2 dark:prose-p:text-white dark:prose-headings:text-white dark:prose-strong:text-white">
-                    <h2 className="text-center">
-                        Other Projects I&apos;ve Contributed To
-                    </h2>
-                    <ul className="md:columns-2">
-                        {moreProjects.map((proj: IListProject, i) => (
-                            <li key={`moreProjects_${i}_${proj.title}`}>
+            <div className="prose mx-auto pt-2 text-center dark:prose-p:text-white dark:prose-headings:text-white dark:prose-strong:text-white">
+                <h2 className="text-center">
+                    Other Projects I&apos;ve Contributed To
+                </h2>
+                <div className="flex flex-wrap overflow-hidden justify-center list-none">
+                    {moreProjects.map((proj: IListProject, i) => (
+                        <div
+                            key={`moreProjects_${i}_${proj.title}`}
+                            className="y-1 px-1 w-full overflow-hidden md:my-4 md:px-4 md:w-1/2"
+                        >
+                            <a
+                                href={proj.link}
+                                className="flex flex-col items-center gap-4 m-2 pt-5 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-900 no-underline"
+                            >
+                                {proj.logo && (
+                                    <Image
+                                        src={proj.logo}
+                                        width={100}
+                                        height={100}
+                                        alt={proj.title}
+                                        objectFit="contain"
+                                    />
+                                )}
                                 <div>
                                     <strong>{proj.title}</strong>
                                     <p className="overflow-clip text-ellipsis md:overflow-auto md:whitespace-normal">
                                         {proj.link ? (
-                                            <a
-                                                href={proj.link}
-                                                target="_blank"
-                                                rel="noreferrer"
-                                                className="text-blue-500 hover:text-blue-400"
-                                            >
-                                                {proj.link}
-                                            </a>
+                                            <span className="text-blue-500 hover:text-blue-400">
+                                                {proj.link.split('https://')[1]}
+                                            </span>
                                         ) : (
                                             proj.text
                                         )}
                                     </p>
                                 </div>
-                            </li>
-                        ))}
-                    </ul>
+                            </a>
+                        </div>
+                    ))}
                 </div>
-            )}
+            </div>
         </Card>
     );
 };

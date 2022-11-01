@@ -40,9 +40,8 @@ export const Header: React.FC<IHeaderProps> = ({
                 <Link href="/">{header}</Link>.
             </h1>
             {sections.map(({ id, text, href }, i) => (
-                <div className="min-h-[68px]">
+                <div key={`header_${i}_${href}`} className="md:min-h-[68px]">
                     <span
-                        key={`header_${i}_${href}`}
                         className={`${linkStyles} ${
                             currentSection == id
                                 ? selectedStyles

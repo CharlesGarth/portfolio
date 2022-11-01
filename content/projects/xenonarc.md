@@ -1,0 +1,3 @@
+The companion website to Conntact 2.0 (see below) and Xenon Arc’s other products, this was a beautifully designed marketing and informational site with some neat additional features.
+
+I built around half of the sites infrastructure and components, working as team with another highly skilled developer. The front page of the site features a return on investment calculator that you see in the first image. I built this to specification that allows the user to tweak their inputs and dynamically show just how much using Xenon Arc could help. The client was very happy with this feature and its the part of the project I’m probably most proud of.

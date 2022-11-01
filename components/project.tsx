@@ -1,5 +1,7 @@
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { useState, MouseEvent } from 'react';
+import { Button } from './button';
 import { LightBox } from './lightbox';
 
 export interface IProject {
@@ -9,6 +11,7 @@ export interface IProject {
     tags: string[];
     mainImage: string;
     images: string[];
+    markdown?: string;
 }
 
 interface IProjectImage {
@@ -55,6 +58,12 @@ const ProjectImage: React.FC<IProjectImage> = ({
     );
 };
 
+const getDynamicComponent = (filename: string) =>
+    dynamic(() => import(`content/projects/${filename}.md`), {
+        ssr: false,
+        loading: () => <p>Loading...</p>,
+    });
+
 export const ProjectCard: React.FC<IProject> = ({
     title,
     link,
@@ -62,8 +71,12 @@ export const ProjectCard: React.FC<IProject> = ({
     tags,
     mainImage,
     images,
+    markdown,
 }) => {
     const [selectedImage, setSelectedImage] = useState<string>();
+    const [readMore, setReadMore] = useState<boolean>();
+
+    const MarkdownComponent = markdown ? getDynamicComponent(markdown) : null;
 
     return (
         <div className="sm:py-1 md:py-2 lg:py-10 mx-auto w-full">
@@ -136,6 +149,20 @@ export const ProjectCard: React.FC<IProject> = ({
                         className="rounded-lg"
                     />
                 </LightBox>
+            )}
+            {markdown && MarkdownComponent && (
+                <>
+                    {readMore && (
+                        <div className="prose mx-auto pt-2 dark:prose-p:text-white dark:prose-headings:text-white dark:prose-strong:text-white">
+                            <h2 className="text-center">Project Info</h2>
+                            <MarkdownComponent />
+                        </div>
+                    )}
+                    <Button
+                        text={readMore ? 'Close' : 'Read More'}
+                        onClick={() => setReadMore(!readMore)}
+                    />
+                </>
             )}
         </div>
     );

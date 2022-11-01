@@ -1,34 +1,42 @@
 [
     {
         "title": "Easy Hotel",
-        "link": "https://www.easyhotel.com"
+        "link": "https://www.easyhotel.com",
+        "logo": "/assets/logos/easyhotel-logo.png"
     },
     {
         "title": "Financial Edge",
-        "link": "https://www.fe.training"
+        "link": "https://www.fe.training",
+        "logo": "/assets/logos/fe-logo.svg"
     },
     {
         "title": "Promocell",
-        "link": "https://www.promocell.com"
+        "link": "https://www.promocell.com",
+        "logo": "/assets/logos/promocell-logo.png"
     },
     {
         "title": "Rhinostics",
-        "link": "https://www.rhinostics.com"
+        "link": "https://www.rhinostics.com",
+        "logo": "/assets/logos/rhinostics-logo.svg"
     },
     {
-        "title": "Inner Temple",
-        "link": "https://www.innertemple.org.uk"
+        "title": "The Inner Temple",
+        "link": "https://www.innertemple.org.uk",
+        "logo": "/assets/logos/inner-temple-logo.webp"
     },
     {
         "title": "Brunswick Real Estate",
-        "link": "https://www.brunswickrealestate.com"
+        "link": "https://www.brunswickrealestate.com",
+        "logo": "/assets/logos/bre-logo.svg"
     },
     {
         "title": "Network Rail",
-        "text": "Domain Specific Platforms For Internal Use"
+        "text": "Domain Specific Platforms For Internal Use",
+        "logo": "/assets/logos/nr-logo.svg"
     },
     {
         "title": "Coventry Building Society",
-        "text": "Unreleased Interest Comparison Projection Prototype"
+        "text": "Savings Account Comparison Projection Prototype For Internal Use",
+        "logo": "/assets/logos/cbs-logo.svg"
     }
 ]
